@@ -1,0 +1,450 @@
+Warning: Using a password on the command line interface can be insecure.
+--------------
+SELECT * FROM Universities
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+LOAD DATA LOCAL INFILE 'loaddatafall2020.txt' INTO TABLE Universities FIELDS TERMINATED BY ',' (Number,UniversityName,City,ProvinceCode,Nickname)
+--------------
+
+Query OK, 7 rows affected (0.02 sec)
+Records: 7  Deleted: 0  Skipped: 0  Warnings: 0
+
+--------------
+SELECT * FROM Universities
+--------------
+
++--------------------------------+-----------+--------------+----------+--------+
+| UniversityName                 | City      | ProvinceCode | Nickname | Number |
++--------------------------------+-----------+--------------+----------+--------+
+| University Of Toronto          | Toronto   | ON           | UofT     |      2 |
+| University of Waterloo         | Waterloo  | ON           | Waterloo |      4 |
+| Concordia University           | Montreal  | QB           | Concord  |     24 |
+| McMaster University            | Hamilton  | ON           | Mac      |     55 |
+| University of British Columbia | Vancouver | BC           | UBC      |     66 |
+| Wilfred Laurier University     | Waterloo  | ON           | Laurier  |     77 |
+| McGill University              | Montreal  | QB           | McGill   |     88 |
++--------------------------------+-----------+--------------+----------+--------+
+7 rows in set (0.00 sec)
+
+--------------
+SELECT * FROM WesternCourses
+--------------
+
+Empty set (0.01 sec)
+
+--------------
+INSERT INTO WesternCourses VALUES('cs1026','Computer Science Fundamentals I',0.5,"A/B")
+--------------
+
+Query OK, 1 row affected (0.02 sec)
+
+--------------
+INSERT INTO WesternCourses VALUES('cs1027', 'Computer Science Fundamentals II', '0.5', "A/B")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO WesternCourses VALUES('cs2210', 'Algorithms and Data Structures', 1.0, "A/B")
+--------------
+
+Query OK, 1 row affected (0.02 sec)
+
+--------------
+INSERT INTO WesternCourses VALUES('cs3319', 'Databases I', 0.5, "A/B")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO WesternCourses VALUES('cs2120', 'Modern Survival Skills I: Coding Essentials', 0.5, "A/B")
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO WesternCourses VALUES('cs4490', 'Thesis', 0.5, "Z")
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO WesternCourses VALUES('cs0020', 'Intro to Coding using Pascal and Fortran', 1.0,'')
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+SELECT * FROM WesternCourses
+--------------
+
++--------------+---------------------------------------------+--------+--------+
+| CourseNumber | CourseName                                  | Weight | Suffix |
++--------------+---------------------------------------------+--------+--------+
+| cs0020       | Intro to Coding using Pascal and Fortran    |      1 |        |
+| cs1026       | Computer Science Fundamentals I             |    0.5 | A/B    |
+| cs1027       | Computer Science Fundamentals II            |    0.5 | A/B    |
+| cs2120       | Modern Survival Skills I: Coding Essentials |    0.5 | A/B    |
+| cs2210       | Algorithms and Data Structures              |      1 | A/B    |
+| cs3319       | Databases I                                 |    0.5 | A/B    |
+| cs4490       | Thesis                                      |    0.5 | Z      |
++--------------+---------------------------------------------+--------+--------+
+7 rows in set (0.00 sec)
+
+--------------
+INSERT INTO Universities VALUES('Hogwarts','Toronto','ON','HW','0')
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+SELECT * FROM Universities
+--------------
+
++--------------------------------+-----------+--------------+----------+--------+
+| UniversityName                 | City      | ProvinceCode | Nickname | Number |
++--------------------------------+-----------+--------------+----------+--------+
+| Hogwarts                       | Toronto   | ON           | HW       |      0 |
+| University Of Toronto          | Toronto   | ON           | UofT     |      2 |
+| University of Waterloo         | Waterloo  | ON           | Waterloo |      4 |
+| Concordia University           | Montreal  | QB           | Concord  |     24 |
+| McMaster University            | Hamilton  | ON           | Mac      |     55 |
+| University of British Columbia | Vancouver | BC           | UBC      |     66 |
+| Wilfred Laurier University     | Waterloo  | ON           | Laurier  |     77 |
+| McGill University              | Montreal  | QB           | McGill   |     88 |
++--------------------------------+-----------+--------------+----------+--------+
+8 rows in set (0.00 sec)
+
+--------------
+SELECT * FROM OutsideCourses
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+INSERT INTO OutsideCourses(CourseNumber,CourseName,Year,Weight,UniversityNumber) VALUES('CompSci022', 'Introduction to Programming', 1, 0.5, 2)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO OutsideCourses(CourseNumber,CourseName,Year,Weight,UniversityNumber) VALUES('CompSci033', 'Intro to Programming for Med students', 3, 0.5,2)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO OutsideCourses(CourseNumber,CourseName,Year,Weight,UniversityNumber) VALUES('CompSci021', 'Packages', 1, 0.5,2)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO OutsideCourses(CourseNumber,CourseName,Year,Weight,UniversityNumber) VALUES('CompSci222', 'Introduction to Databases', 2, 1.0,2)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO OutsideCourses(CourseNumber,CourseName,Year,Weight,UniversityNumber) VALUES('CompSci023', 'Advanced Programming', 1, 0.5,2)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO OutsideCourses(CourseNumber,CourseName,Year,Weight,UniversityNumber) VALUES('CompSci011', 'Intro to Computer Science', 2, 0.5,4)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO OutsideCourses(CourseNumber,CourseName,Year,Weight,UniversityNumber) VALUES('CompSci123', 'Using UNIX', 2, 0.5,4)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO OutsideCourses(CourseNumber,CourseName,Year,Weight,UniversityNumber) VALUES('CompSci021', 'Intro Programming', 1, 1.0,66)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO OutsideCourses(CourseNumber,CourseName,Year,Weight,UniversityNumber) VALUES('CompSci022', 'Advanced Programming', 1, 0.5,66)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO OutsideCourses(CourseNumber,CourseName,Year,Weight,UniversityNumber) VALUES('CompSci319', 'Using Databases', 3, 0.5,66)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO OutsideCourses(CourseNumber,CourseName,Year,Weight,UniversityNumber) VALUES('CompSci333', 'Graphics', 3, 0.5,55)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO OutsideCourses(CourseNumber,CourseName,Year,Weight,UniversityNumber) VALUES('CompSci444', 'Networks', 4, 0.5,55)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO OutsideCourses(CourseNumber,CourseName,Year,Weight,UniversityNumber) VALUES('CompSci022', 'Using Packages', 1, 0.5,77)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO OutsideCourses(CourseNumber,CourseName,Year,Weight,UniversityNumber) VALUES('CompSci101', 'Introduction to Using Data Structures', 2, 0.5,77)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO OutsideCourses VALUES('CompSci999','How to light a computer on fire',0,4,0.5)
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO OutsideCourses VALUES('CompSci998','How to put out a fire',0,4,0.5)
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+SELECT * FROM OutsideCourses
+--------------
+
++--------------+---------------------------------------+------------------+------+--------+
+| CourseNumber | CourseName                            | UniversityNumber | Year | Weight |
++--------------+---------------------------------------+------------------+------+--------+
+| CompSci011   | Intro to Computer Science             |                4 |    2 |    0.5 |
+| CompSci021   | Packages                              |                2 |    1 |    0.5 |
+| CompSci021   | Intro Programming                     |               66 |    1 |      1 |
+| CompSci022   | Introduction to Programming           |                2 |    1 |    0.5 |
+| CompSci022   | Advanced Programming                  |               66 |    1 |    0.5 |
+| CompSci022   | Using Packages                        |               77 |    1 |    0.5 |
+| CompSci023   | Advanced Programming                  |                2 |    1 |    0.5 |
+| CompSci033   | Intro to Programming for Med students |                2 |    3 |    0.5 |
+| CompSci101   | Introduction to Using Data Structures |               77 |    2 |    0.5 |
+| CompSci123   | Using UNIX                            |                4 |    2 |    0.5 |
+| CompSci222   | Introduction to Databases             |                2 |    2 |      1 |
+| CompSci319   | Using Databases                       |               66 |    3 |    0.5 |
+| CompSci333   | Graphics                              |               55 |    3 |    0.5 |
+| CompSci444   | Networks                              |               55 |    4 |    0.5 |
+| CompSci998   | How to put out a fire                 |                0 |    4 |    0.5 |
+| CompSci999   | How to light a computer on fire       |                0 |    4 |    0.5 |
++--------------+---------------------------------------+------------------+------+--------+
+16 rows in set (0.00 sec)
+
+--------------
+SELECT * FROM EqualTo
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+INSERT INTO EqualTo Values('cs1026','CompSci022',2,'2015-05-12')
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO EqualTo Values('cs1026','CompSci033',2,'2013-01-02')
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO EqualTo Values('cs1026','CompSci011',4,'1997-02-09')
+--------------
+
+Query OK, 1 row affected (0.03 sec)
+
+--------------
+INSERT INTO EqualTo Values('cs1026','CompSci021',66,'2010-01-12')
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO EqualTo Values('cs1027','CompSci023',2,'2017-06-22')
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO EqualTo Values('cs1027','CompSci022',66,'2019-09-01')
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO EqualTo Values('cs2210','CompSci101',77,'1998-07-12')
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO EqualTo Values('cs3319','CompSci222',2,'1990-09-13')
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO EqualTo Values('cs3319','CompSci319',66,'1987-09-21')
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+INSERT INTO EqualTo Values('cs2120','CompSci022',2,'2018-12-10')
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+INSERT INTO EqualTo Values('cs0020','CompSci022',2,'1999-09-17')
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+
+--------------
+SELECT * FROM EqualTo
+--------------
+
++---------------+---------------+-------------------+--------------+
+| WesternCourse | OutsideCourse | OutsideUniversity | DecisionDate |
++---------------+---------------+-------------------+--------------+
+| cs1026        | CompSci022    |                 2 | 2015-05-12   |
+| cs1026        | CompSci033    |                 2 | 2013-01-02   |
+| cs1026        | CompSci011    |                 4 | 1997-02-09   |
+| cs1026        | CompSci021    |                66 | 2010-01-12   |
+| cs1027        | CompSci023    |                 2 | 2017-06-22   |
+| cs1027        | CompSci022    |                66 | 2019-09-01   |
+| cs2210        | CompSci101    |                77 | 1998-07-12   |
+| cs3319        | CompSci222    |                 2 | 1990-09-13   |
+| cs3319        | CompSci319    |                66 | 1987-09-21   |
+| cs2120        | CompSci022    |                 2 | 2018-12-10   |
+| cs0020        | CompSci022    |                 2 | 1999-09-17   |
++---------------+---------------+-------------------+--------------+
+11 rows in set (0.00 sec)
+
+--------------
+SELECT * FROM EqualTo
+--------------
+
++---------------+---------------+-------------------+--------------+
+| WesternCourse | OutsideCourse | OutsideUniversity | DecisionDate |
++---------------+---------------+-------------------+--------------+
+| cs1026        | CompSci022    |                 2 | 2015-05-12   |
+| cs1026        | CompSci033    |                 2 | 2013-01-02   |
+| cs1026        | CompSci011    |                 4 | 1997-02-09   |
+| cs1026        | CompSci021    |                66 | 2010-01-12   |
+| cs1027        | CompSci023    |                 2 | 2017-06-22   |
+| cs1027        | CompSci022    |                66 | 2019-09-01   |
+| cs2210        | CompSci101    |                77 | 1998-07-12   |
+| cs3319        | CompSci222    |                 2 | 1990-09-13   |
+| cs3319        | CompSci319    |                66 | 1987-09-21   |
+| cs2120        | CompSci022    |                 2 | 2018-12-10   |
+| cs0020        | CompSci022    |                 2 | 1999-09-17   |
++---------------+---------------+-------------------+--------------+
+11 rows in set (0.00 sec)
+
+--------------
+UPDATE EqualTo SET DecisionDate='2018-09-19' WHERE WesternCourse='cs0020' AND OutsideCourse='Compsci022' AND OutsideUniversity=2
+--------------
+
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+SELECT * FROM EqualTo
+--------------
+
++---------------+---------------+-------------------+--------------+
+| WesternCourse | OutsideCourse | OutsideUniversity | DecisionDate |
++---------------+---------------+-------------------+--------------+
+| cs1026        | CompSci022    |                 2 | 2015-05-12   |
+| cs1026        | CompSci033    |                 2 | 2013-01-02   |
+| cs1026        | CompSci011    |                 4 | 1997-02-09   |
+| cs1026        | CompSci021    |                66 | 2010-01-12   |
+| cs1027        | CompSci023    |                 2 | 2017-06-22   |
+| cs1027        | CompSci022    |                66 | 2019-09-01   |
+| cs2210        | CompSci101    |                77 | 1998-07-12   |
+| cs3319        | CompSci222    |                 2 | 1990-09-13   |
+| cs3319        | CompSci319    |                66 | 1987-09-21   |
+| cs2120        | CompSci022    |                 2 | 2018-12-10   |
+| cs0020        | CompSci022    |                 2 | 2018-09-19   |
++---------------+---------------+-------------------+--------------+
+11 rows in set (0.00 sec)
+
+--------------
+SELECT * FROM OutsideCourses
+--------------
+
++--------------+---------------------------------------+------------------+------+--------+
+| CourseNumber | CourseName                            | UniversityNumber | Year | Weight |
++--------------+---------------------------------------+------------------+------+--------+
+| CompSci011   | Intro to Computer Science             |                4 |    2 |    0.5 |
+| CompSci021   | Packages                              |                2 |    1 |    0.5 |
+| CompSci021   | Intro Programming                     |               66 |    1 |      1 |
+| CompSci022   | Introduction to Programming           |                2 |    1 |    0.5 |
+| CompSci022   | Advanced Programming                  |               66 |    1 |    0.5 |
+| CompSci022   | Using Packages                        |               77 |    1 |    0.5 |
+| CompSci023   | Advanced Programming                  |                2 |    1 |    0.5 |
+| CompSci033   | Intro to Programming for Med students |                2 |    3 |    0.5 |
+| CompSci101   | Introduction to Using Data Structures |               77 |    2 |    0.5 |
+| CompSci123   | Using UNIX                            |                4 |    2 |    0.5 |
+| CompSci222   | Introduction to Databases             |                2 |    2 |      1 |
+| CompSci319   | Using Databases                       |               66 |    3 |    0.5 |
+| CompSci333   | Graphics                              |               55 |    3 |    0.5 |
+| CompSci444   | Networks                              |               55 |    4 |    0.5 |
+| CompSci998   | How to put out a fire                 |                0 |    4 |    0.5 |
+| CompSci999   | How to light a computer on fire       |                0 |    4 |    0.5 |
++--------------+---------------------------------------+------------------+------+--------+
+16 rows in set (0.00 sec)
+
+--------------
+UPDATE OutsideCourses SET Year=1 WHERE CourseName LIKE "Intro%"
+--------------
+
+Query OK, 4 rows affected (0.00 sec)
+Rows matched: 6  Changed: 4  Warnings: 0
+
+--------------
+SELECT * FROM OutsideCourses
+--------------
+
++--------------+---------------------------------------+------------------+------+--------+
+| CourseNumber | CourseName                            | UniversityNumber | Year | Weight |
++--------------+---------------------------------------+------------------+------+--------+
+| CompSci011   | Intro to Computer Science             |                4 |    1 |    0.5 |
+| CompSci021   | Packages                              |                2 |    1 |    0.5 |
+| CompSci021   | Intro Programming                     |               66 |    1 |      1 |
+| CompSci022   | Introduction to Programming           |                2 |    1 |    0.5 |
+| CompSci022   | Advanced Programming                  |               66 |    1 |    0.5 |
+| CompSci022   | Using Packages                        |               77 |    1 |    0.5 |
+| CompSci023   | Advanced Programming                  |                2 |    1 |    0.5 |
+| CompSci033   | Intro to Programming for Med students |                2 |    1 |    0.5 |
+| CompSci101   | Introduction to Using Data Structures |               77 |    1 |    0.5 |
+| CompSci123   | Using UNIX                            |                4 |    2 |    0.5 |
+| CompSci222   | Introduction to Databases             |                2 |    1 |      1 |
+| CompSci319   | Using Databases                       |               66 |    3 |    0.5 |
+| CompSci333   | Graphics                              |               55 |    3 |    0.5 |
+| CompSci444   | Networks                              |               55 |    4 |    0.5 |
+| CompSci998   | How to put out a fire                 |                0 |    4 |    0.5 |
+| CompSci999   | How to light a computer on fire       |                0 |    4 |    0.5 |
++--------------+---------------------------------------+------------------+------+--------+
+16 rows in set (0.00 sec)
+
+Bye
